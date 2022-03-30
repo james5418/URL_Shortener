@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "sudo /home/james5418/.nvm/versions/node/v16.14.0/bin/node index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [],
@@ -12,8 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
+    "moment": "^2.29.1",
     "nodemon": "^2.0.15",
     "redis": "^4.0.4",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "valid-url": "^1.0.9"
   }
 }
