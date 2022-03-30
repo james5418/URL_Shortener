@@ -14,17 +14,25 @@ curl -X POST -H "Content-Type:application/json" http://localhost:8000/api/v1/url
 "expireAt": "YYYY-MM-DDTHH:mm:ssZ"
 }'
 ```
-Response
+
+> Response
 ```
 {
 "id": "<url_id>",
 "shortUrl": "http://localhost:8000/<url_id>"
 }
 ```
+
 Redirect to original URL
 ```
-curl -L -X GET http://localhost/<url_id>
+curl -L -X GET http://localhost:8000/<url_id>
 ```
+
+Show URLs mapping
+```
+curl -L -X GET http://localhost:8000/show
+```
+
 
 ## Getting Started
 
