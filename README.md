@@ -1,5 +1,9 @@
 # URL_Shortener
 
+![](https://img.shields.io/badge/Node.js-✓-green.svg)
+![](https://img.shields.io/badge/Express.js-✓-blue.svg)
+![](https://img.shields.io/badge/Redis-✓-red.svg)
+
 **Yet Another URL Shortening Service**
 
 ## Usage
