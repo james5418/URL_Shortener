@@ -8,7 +8,7 @@
 
 ## Usage
 Generate short URL
-```
+```shell
 curl -X POST -H "Content-Type:application/json" http://localhost:8000/api/v1/urls -d '{
 "url": "<original_url>",
 "expireAt": "YYYY-MM-DDTHH:mm:ssZ"
@@ -16,7 +16,7 @@ curl -X POST -H "Content-Type:application/json" http://localhost:8000/api/v1/url
 ```
 
 > Response
-```
+```json
 {
 "id": "<url_id>",
 "shortUrl": "http://localhost:8000/<url_id>"
