@@ -1,21 +1,23 @@
 # URL_Shortener
 
+**Yet Another URL Shortening Service**
+
 ## Usage
 Generate short URL
 ```
-curl -X POST -H "Content-Type:application/json" http://localhost/api/v1/urls -d '{
+curl -X POST -H "Content-Type:application/json" http://localhost:8000/api/v1/urls -d '{
 "url": "<original_url>",
-"expireAt": "2021-02-08T09:20:41Z"
+"expireAt": "YYYY-MM-DDTHH:mm:ssZ"
 }'
 ```
 Response
 ```
 {
 "id": "<url_id>",
-"shortUrl": "http://localhost/<url_id>"
+"shortUrl": "http://localhost:8000/<url_id>"
 }
 ```
-Redirect URL API
+Redirect to original URL
 ```
 curl -L -X GET http://localhost/<url_id>
 ```
@@ -34,4 +36,5 @@ npm start
 ```
 sudo service redis-server start
 ```
+
 
