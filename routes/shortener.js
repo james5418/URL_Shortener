@@ -1,18 +1,26 @@
 const router = require("express").Router();
 const shortid = require("shortid");
-const validUrl = require('valid-url');
-const client = require('../redis_client');
+const isUrl = require("is-valid-http-url");
+const client = require("../redis_client");
+const moment = require('moment');
 
+const check_date = (expire_date) => {
+    let valid = moment(expire_date, "YYYY-MM-DDTHH:mm:ssZ", true).isValid();
+    let now = new Date();
+    let isafter = moment(expire_date).isAfter(now);
+
+    return (valid&&isafter ? true : false);
+}
 
 router.post('/', async(req, res) => {
     try{
         const {url, expireAt} = req.body;
-        
-        if(!validUrl.isUri(url)){
-            res.status(500).send("The input URL is invalid!");
+
+        if(!isUrl(url)){
+            res.status(400).send("Invalid URL!");
         }
-        else if(!expireAt){
-            res.status(500).send("Expired date cannot be empty!");
+        else if(!check_date(expireAt)){
+            res.status(400).send("Invaild expired date!");
         }
         else{
             const shortURL = shortid.generate();
@@ -23,7 +31,7 @@ router.post('/', async(req, res) => {
                 'expireAt', expireAt,
             ]);
         
-            res.status(200).json({"id" : shortURL, "shortUrl" : "http://localhost:8000/" + shortURL});
+            res.status(200).json({"id" : shortURL, "shortUrl" : `http://localhost:8000/${shortURL}`});
         }
     }
     catch(err){
