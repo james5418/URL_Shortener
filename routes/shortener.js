@@ -3,6 +3,7 @@ const shortid = require("shortid");
 const isUrl = require("is-valid-http-url");
 const client = require("../redis_client");
 const moment = require('moment');
+const PORT = process.env.PORT || 8000;
 
 const check_date = (expire_date) => {
     let valid = moment(expire_date, "YYYY-MM-DDTHH:mm:ssZ", true).isValid();
@@ -31,7 +32,7 @@ router.post('/', async(req, res) => {
                 'expireAt', expireAt,
             ]);
         
-            res.status(200).json({"id" : shortURL, "shortUrl" : `http://localhost:8000/${shortURL}`});
+            res.status(200).json({"id" : shortURL, "shortUrl" : `http://localhost:${PORT}/${shortURL}`});
         }
     }
     catch(err){
