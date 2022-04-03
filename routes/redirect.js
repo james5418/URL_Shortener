@@ -13,12 +13,12 @@ router.get('/:id', async(req, res) => {
             res.redirect(long_url.url);
         }
         else{
-            res.status(404).send(`localhost:${PORT}/${url_id} not found`)
+            res.status(404).send(`localhost:${PORT}/${url_id} not found`);
         }
     }
     catch(err){
-        res.status(500).json(err)
+        res.status(500).json(err);
     }
-})
+});
 
 module.exports = router;

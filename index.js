@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 8888;
 
 const app = express();
 app.use(express.json());
-app.use(helmet())
+app.use(helmet());
 app.use(helmet.xssFilter());
 app.use(express.static('public'));
 

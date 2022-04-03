@@ -10,7 +10,7 @@ chai.should();
 chai.use(chaiHttp);
 
 let url_id;
-const expired_url_id = "expired"
+const expired_url_id = "expired";
 const non_exist_url_id = "nonexist";
 
 
@@ -31,7 +31,7 @@ describe("Function", () => {
 
     it("check_date()", (done) => {
 
-        let m1 = new Date() 
+        let m1 = new Date() ;
         m1.setHours(m1.getHours() + 4);
         m1 = m1.toISOString().split('.')[0] + "Z"; // YYYY-MM-DDTHH:mm:ssZ
 
@@ -52,14 +52,14 @@ describe("Generate a shorten url", () => {
 
     it(`POST http://localhost:${PORT}/api/v1/urls`, (done) => {
         
-        let m = new Date()
+        let m = new Date();
         m.setHours(m.getHours() + 4);
         m = m.toISOString().split('.')[0] + "Z";
 
         let new_req = {
             'url': "https://github.com/james5418",
             'expireAt': m
-        }
+        };
 
         const res = chai.request(server)
             .post(`/api/v1/urls`)
@@ -78,14 +78,14 @@ describe("Generate a shorten url", () => {
 
     it("POST with wrong variable name", (done) => {
         
-        let m = new Date()
+        let m = new Date();
         m.setHours(m.getHours() + 4);
         m = m.toISOString().split('.')[0] + "Z";
 
         let new_req = {
             'URL': "https://github.com/james5418",
             'expireAt': m
-        }
+        };
 
         const res = chai.request(server)
             .post(`/api/v1/urls`)
@@ -98,14 +98,14 @@ describe("Generate a shorten url", () => {
 
     it("POST with invalid url", (done) => {
         
-        let m = new Date()
+        let m = new Date();
         m.setHours(m.getHours() + 4);
         m = m.toISOString().split('.')[0] + "Z";
 
         let new_req = {
             'url': "github.com/james5418",
             'expireAt': m
-        }
+        };
 
         const res = chai.request(server)
             .post(`/api/v1/urls`)
@@ -119,13 +119,13 @@ describe("Generate a shorten url", () => {
 
     it("POST with invalid expired date (wrong format)", (done) => {
         
-        let m = new Date() // YYYY-MM-DDTHH:mm:ss.SSSZ
+        let m = new Date(); // YYYY-MM-DDTHH:mm:ss.SSSZ
         m.setHours(m.getHours() + 4);
 
         let new_req = {
             'url': "https://github.com/james5418",
             'expireAt': m
-        }
+        };
 
         const res = chai.request(server)
             .post(`/api/v1/urls`)
@@ -142,7 +142,7 @@ describe("Generate a shorten url", () => {
         let new_req = {
             'url': "https://github.com/james5418",
             'expireAt': "2022-03-30T15:55:20Z"
-        }
+        };
 
         const res = chai.request(server)
             .post(`/api/v1/urls`)
