@@ -7,6 +7,14 @@
 **Yet Another URL Shortening Service**
 
 ## Usage
+| HTTP Type | API URL      | Comments                                         |
+| --------- | ------------ | ------------------------------------------------ |
+| POST      | /api/v1/urls | Shorten a given url                              |
+| GET       | /<url_id>    | Redirect to original url by <url_id>             |
+| GET       | /show        | Get all short urls and their their original urls |
+
+### Examples
+
 Generate short URL
 ```shell
 curl -X POST -H "Content-Type:application/json" http://localhost:8000/api/v1/urls -d '{
@@ -48,5 +56,12 @@ npm start
 ```
 sudo service redis-server start
 ```
+#### Unit Test
+```
+npm test
+```
+
+## Work Flow
+
 
 
