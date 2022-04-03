@@ -1,7 +1,6 @@
 const express = require("express");
 const helmet = require("helmet");
-const morgan = require("morgan");
-const client = require('./redis_client');
+const client = require('./utils/redis_client');
 const dotenv = require('dotenv').config();
 const PORT = process.env.PORT || 8888;
 
@@ -9,7 +8,6 @@ const app = express();
 app.use(express.json());
 app.use(helmet())
 app.use(helmet.xssFilter());
-// app.use(morgan("common"));
 app.use(express.static('public'));
 
 const showRouter = require("./routes/show");

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const client = require('../redis_client');
+const client = require('../utils/redis_client');
 
 router.get('/', async(req, res) => {
     try{
@@ -11,7 +11,7 @@ router.get('/', async(req, res) => {
             query.push({"short_url":`localhost:8000/${keys[i]}`, "original_url":`${long_url.url}`})
         }
 
-        res.status(200).json({"map":query})
+        res.status(200).json(query);
     }
     catch(err){
         res.status(500).json(err)

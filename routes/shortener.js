@@ -1,17 +1,10 @@
 const router = require("express").Router();
 const shortid = require("shortid");
 const isUrl = require("is-valid-http-url");
-const client = require("../redis_client");
-const moment = require('moment');
+const client = require("../utils/redis_client");
+const check_date = require("../utils/validation");
 const PORT = process.env.PORT || 8000;
 
-const check_date = (expire_date) => {
-    let valid = moment(expire_date, "YYYY-MM-DDTHH:mm:ssZ", true).isValid();
-    let now = new Date();
-    let isafter = moment(expire_date).isAfter(now);
-
-    return (valid&&isafter ? true : false);
-}
 
 router.post('/', async(req, res) => {
     try{
