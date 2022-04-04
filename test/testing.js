@@ -166,7 +166,7 @@ describe("Redirection to original url", () => {
         });
     });
 
-    it("GET short url having non-exist id", (done) => {
+    it("GET short url having non-existent id", (done) => {
         request.get(`http://localhost:${PORT}/${non_exist_url_id}`, (err, response, body) => {
             response.should.have.status(404);
             body.should.be.eql(`localhost:${PORT}/${non_exist_url_id} not found`);
