@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const shortid = require("shortid");
+const {nanoid} = require("nanoid");
 const isUrl = require("is-valid-http-url");
 const client = require("../utils/redis_client");
 const check_date = require("../utils/validation");
@@ -17,10 +17,9 @@ router.post('/', async(req, res) => {
             res.status(400).send("Invaild expired date!");
         }
         else{
-            const shortURL = shortid.generate();
+            const shortURL = nanoid(10);
             
             await client.hSet(shortURL, [
-                'id', shortURL,
                 'url', url,
                 'expireAt', expireAt,
             ]);

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const client = require('../utils/redis_client');
+const client = require("../utils/redis_client");
 const check_date = require("../utils/validation");
 const PORT = process.env.PORT || 8000;
 
@@ -13,6 +13,11 @@ router.get('/:id', async(req, res) => {
             res.redirect(long_url.url);
         }
         else{
+            await client.hSet(url_id, [
+                'url', null,
+                'expireAt', null,
+            ]);
+
             res.status(404).send(`localhost:${PORT}/${url_id} not found`);
         }
     }

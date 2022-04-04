@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const client = require('../utils/redis_client');
+const client = require("../utils/redis_client");
 
 router.get('/', async(req, res) => {
     try{

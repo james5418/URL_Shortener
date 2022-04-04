@@ -1,8 +1,10 @@
+process.env.NODE_ENV = 'test';
+
 const chai = require("chai");
 const chaiHttp = require("chai-http");
-const request = require('request');
+const request = require("request");
 const {server, PORT} = require("../index");
-const client = require('../utils/redis_client');
+const client = require("../utils/redis_client");
 const check_date = require("../utils/validation");
 
 chai.should();
@@ -15,7 +17,6 @@ const non_exist_url_id = "nonexist";
 
 before( async() => {
     await client.hSet(expired_url_id, [
-        'id', expired_url_id,
         'url', "https://example.com/",
         'expireAt', "2022-03-30T15:55:20Z",
     ]);
@@ -69,7 +70,7 @@ describe("Generate a shorten url", () => {
                 response.body.should.have.property('id');
                 response.body.should.have.property('shortUrl');
                 Object.keys(response.body).length.should.be.eql(2);
-                response.body.id.length.should.be.eql(9);
+                response.body.id.length.should.be.eql(10);
             done();
             url_id = response.body.id;
             });

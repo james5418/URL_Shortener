@@ -1,7 +1,8 @@
 const express = require("express");
 const helmet = require("helmet");
-const client = require('./utils/redis_client');
-const dotenv = require('dotenv').config();
+const client = require("./utils/redis_client");
+const dotenv = require("dotenv").config();
+const morgan = require("morgan");
 const PORT = process.env.PORT || 8000;
 
 const app = express();
@@ -9,6 +10,10 @@ app.use(express.json());
 app.use(helmet());
 app.use(helmet.xssFilter());
 app.use(express.static('public'));
+
+if(process.env.NODE_ENV !== 'test') {
+    app.use(morgan('combined')); 
+}
 
 const showRouter = require("./routes/show");
 app.use("/show", showRouter);
