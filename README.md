@@ -1,21 +1,28 @@
 # URL_Shortener
 
-![](https://img.shields.io/badge/Node.js-✓-green.svg)
-![](https://img.shields.io/badge/Express.js-✓-blue.svg)
-![](https://img.shields.io/badge/Redis-✓-red.svg)
-
 **Yet Another URL Shortening Service**
 
-## Usage
+### Tech Stack
+![Node.js](https://img.shields.io/badge/Node.js-6DA55F?&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-%23404d59.svg?&logo=express&logoColor=%2361DAFB)
+![Redis](https://img.shields.io/badge/Redis-%23DD0031.svg?logo=redis&logoColor=white)
+![Mocha](https://img.shields.io/badge/-Mocha-%238D6748?&logo=mocha&logoColor=white) 
+![Chai](https://img.shields.io/badge/Chai-A30701?&logo=chai&logoColor=white)
+
+<!-- ![](https://img.shields.io/badge/Node.js-✓-green.svg)
+![](https://img.shields.io/badge/Express.js-✓-blue.svg)
+![](https://img.shields.io/badge/Redis-✓-red.svg) -->
+
+### Features
 | HTTP Type | API URL      | Comments                                         |
 | --------- | ------------ | ------------------------------------------------ |
 | POST      | /api/v1/urls | Shorten a given url                              |
 | GET       | /<url_id>    | Redirect to original url by <url_id>             |
-| GET       | /show        | Get all short urls and their their original urls |
+| GET       | /show        | Get all short urls and their original urls |
 
-### Examples
+## Usage
 
-Generate short URL
+Short URL Generation
 ```shell
 curl -X POST -H "Content-Type:application/json" http://localhost:8000/api/v1/urls -d '{
 "url": "<original_url>",
@@ -31,7 +38,7 @@ curl -X POST -H "Content-Type:application/json" http://localhost:8000/api/v1/url
 }
 ```
 
-Redirect to original URL
+Short URL Redirection
 ```
 curl -L -X GET http://localhost:8000/<url_id>
 ```
@@ -56,7 +63,7 @@ npm start
 ```
 sudo service redis-server start
 ```
-#### Unit Test
+#### Unit Test 
 ```
 npm test
 ```
