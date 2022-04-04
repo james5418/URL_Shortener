@@ -1,10 +1,9 @@
 const chai = require("chai");
 const chaiHttp = require("chai-http");
 const request = require('request');
-const server = require("../index");
+const {server, PORT} = require("../index");
 const client = require('../utils/redis_client');
 const check_date = require("../utils/validation");
-const PORT = process.env.PORT || 8000;
 
 chai.should();
 chai.use(chaiHttp);

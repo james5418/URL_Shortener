@@ -2,7 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const client = require('./utils/redis_client');
 const dotenv = require('dotenv').config();
-const PORT = process.env.PORT || 8888;
+const PORT = process.env.PORT || 8000;
 
 const app = express();
 app.use(express.json());
@@ -23,4 +23,4 @@ app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT}...`);
 });
 
-module.exports = app;
+module.exports = {server:app, PORT:PORT};
