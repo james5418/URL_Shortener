@@ -113,7 +113,7 @@ router.post('/', async(req, res) => {
 - If there is an existing short URL entry in the cache and the expired date of that short URL is still valid (not expired), the server will redirect users to the original URL.
 - If the short URL does not exist, the server will respond with status 404 and also record it to the cache.
 
-Since clients may access the server simultaneously and the expired date for the same short URL can be different, it makes sense to store many pairs of different short URLs with the same original URL in the database.
+> Since clients may access the server simultaneously and the expired date for the same short URL can be different, it makes sense to store many pairs of different short URLs with the same original URL in the database.
 
 ```javascript
 router.get('/:id', async(req, res) => {
@@ -148,8 +148,7 @@ Why Redis
     - When N is small, the amortized time for HGETALL and HSET commands is still **O(1)**.
 - Using a separate database like MongoDB in addition to using Redis would add more complexity and compromises latency. Actually, apart from a caching database, Redis has since evolved into a primary database nowadays.
 
-### Testing
-> Using Mocha and Chai
+### Testing — Mocha and Chai
 
 #### Function
 ✔ Examine `check_date()` function works correctly
@@ -169,7 +168,7 @@ Why Redis
 #### GET API
 ✔ GET http&#65279;://localhost:8000/<url_id>
 
-✔ GET short url having non-exist id
+✔ GET short url having non-existent id
 
 ✔ GET short url having already expired date
 
