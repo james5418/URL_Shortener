@@ -169,7 +169,7 @@ describe("Redirection to original url", () => {
     it("GET short url having non-existent id", (done) => {
         request.get(`http://localhost:${PORT}/${non_exist_url_id}`, (err, response, body) => {
             response.should.have.status(404);
-            body.should.be.eql(`localhost:${PORT}/${non_exist_url_id} not found`);
+            body.should.be.eql(`http://localhost:${PORT}/${non_exist_url_id} not found`);
             done();
         });
     });
@@ -177,7 +177,7 @@ describe("Redirection to original url", () => {
     it("GET short url having already expired date", (done) => {
         request.get(`http://localhost:${PORT}/${expired_url_id}`, (err, response, body) => {
             response.should.have.status(404);
-            body.should.be.eql(`localhost:${PORT}/${expired_url_id} not found`);
+            body.should.be.eql(`http://localhost:${PORT}/${expired_url_id} not found`);
             done();
         });
     });
