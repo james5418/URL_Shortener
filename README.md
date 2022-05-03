@@ -1,8 +1,11 @@
 # URL_Shortener
 
-**Yet Another URL Shortening Service**
+![](https://img.shields.io/static/v1?message=Node.js&logo=node.js&labelColor=5c5c5c&color=6DA55F&logoColor=green&label=%20&style=flate)
+![](https://img.shields.io/static/v1?message=Express.js&logo=express&labelColor=5c5c5c&color=%23404d59&logoColor=%2361DAFB&label=%20&style=flate)
+![](https://img.shields.io/static/v1?message=Redis&logo=redis&labelColor=5c5c5c&color=%23DD0031&logoColor=white&label=%20&style=flate)
+![](https://img.shields.io/static/v1?message=Mocha&logo=mocha&labelColor=5c5c5c&color=%238D6748&logoColor=white&label=%20&style=flate)
+![](https://img.shields.io/static/v1?message=Chai&logo=chai&labelColor=5c5c5c&color=A30701&logoColor=white&label=%20&style=flate)
 
-### Tech Stack
 <!-- ![Node.js](https://img.shields.io/badge/Node.js-6DA55F?&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-%23404d59.svg?&logo=express&logoColor=%2361DAFB)
 ![Redis](https://img.shields.io/badge/Redis-%23DD0031.svg?logo=redis&logoColor=white)
@@ -15,13 +18,9 @@
 ![](https://img.shields.io/badge/Mocha-✓-brown.svg)
 ![](https://img.shields.io/badge/Chai-✓-orange.svg) -->
 
-![](https://img.shields.io/static/v1?message=Node.js&logo=node.js&labelColor=5c5c5c&color=6DA55F&logoColor=green&label=%20&style=flate)
-![](https://img.shields.io/static/v1?message=Express.js&logo=express&labelColor=5c5c5c&color=%23404d59&logoColor=%2361DAFB&label=%20&style=flate)
-![](https://img.shields.io/static/v1?message=Redis&logo=redis&labelColor=5c5c5c&color=%23DD0031&logoColor=white&label=%20&style=flate)
-![](https://img.shields.io/static/v1?message=Mocha&logo=mocha&labelColor=5c5c5c&color=%238D6748&logoColor=white&label=%20&style=flate)
-![](https://img.shields.io/static/v1?message=Chai&logo=chai&labelColor=5c5c5c&color=A30701&logoColor=white&label=%20&style=flate)
+### Yet Another URL Shortening Service
 
-### Features
+## Features
 | HTTP Type | API URL      | Comments                                         |
 | --------- | ------------ | ------------------------------------------------ |
 | POST      | /api/v1/urls | Generate a short URL based on the given URL      |
