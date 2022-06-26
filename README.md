@@ -1,5 +1,5 @@
 # URL_Shortener
-![Build](https://github.com/james5418/URL_Shortener/actions/workflows/docker.yml/badge.svg)
+![Build](https://github.com/james5418/URL_Shortener/actions/workflows/main.yml/badge.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ![](https://img.shields.io/static/v1?message=Node.js&logo=node.js&labelColor=5c5c5c&color=6DA55F&logoColor=green&label=%20&style=flate)
