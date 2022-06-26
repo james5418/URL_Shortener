@@ -1,8 +1,11 @@
 const express = require("express");
 const helmet = require("helmet");
 const client = require("./utils/redis_client");
-const dotenv = require("dotenv").config();
-const morgan = require("morgan");
+
+if (process.env.NODE_ENV !== 'production') {
+    require("dotenv").config();
+}
+
 const PORT = process.env.PORT || 8000;
 
 const app = express();
@@ -12,6 +15,7 @@ app.use(helmet.xssFilter());
 app.use(express.static('public'));
 
 if(process.env.NODE_ENV !== 'test') {
+    const morgan = require("morgan");
     app.use(morgan('combined')); 
 }
 

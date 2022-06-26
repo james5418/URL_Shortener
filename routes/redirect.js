@@ -18,7 +18,7 @@ router.get('/:id', async(req, res) => {
                 'expireAt', null,
             ]);
 
-            res.status(404).send(`http://localhost:${PORT}/${url_id} not found`);
+            res.status(404).send(`${url_id} not found`);
         }
     }
     catch(err){
