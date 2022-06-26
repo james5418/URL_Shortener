@@ -23,7 +23,9 @@ before( async() => {
 });
 
 after( async() => {
+    await client.sendCommand(["del", `${url_id}`]);
     await client.sendCommand(["del", "expired"]);
+    await client.sendCommand(["del", "nonexist"]);
 });
 
 

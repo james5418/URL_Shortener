@@ -1,10 +1,11 @@
 const express = require("express");
 const helmet = require("helmet");
-const client = require("./utils/redis_client");
 
 if (process.env.NODE_ENV !== 'production') {
     require("dotenv").config();
 }
+
+const client = require("./utils/redis_client");
 
 const PORT = process.env.PORT || 8000;
 
