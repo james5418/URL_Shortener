@@ -4,9 +4,7 @@ const helmet = require("helmet");
 if (process.env.NODE_ENV !== 'production') {
     require("dotenv").config();
 }
-
 const client = require("./utils/redis_client");
-
 const PORT = process.env.PORT || 8000;
 
 const app = express();

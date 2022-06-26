@@ -5,13 +5,6 @@ const client = require("../utils/redis_client");
 const check_date = require("../utils/validation");
 const PORT = process.env.PORT || 8000;
 
-if(process.env.NODE_ENV === 'production') {
-	HOST = 'https://short--url.herokuapp.com'
-}
-else{
-	HOST = 'http://localhost'
-}
-
 router.post('/', async(req, res) => {
     try{
         const {url, expireAt} = req.body;
@@ -24,13 +17,21 @@ router.post('/', async(req, res) => {
         }
         else{
             const shortURL = nanoid(10);
+            let address = "";
             
             await client.hSet(shortURL, [
                 'url', url,
                 'expireAt', expireAt,
             ]);
         
-            res.status(200).json({"id" : shortURL, "shortUrl" : `${HOST}:${PORT}/${shortURL}`});
+            if(process.env.NODE_ENV === 'production') {
+                address = `https://short--url.herokuapp.com/${shortURL}`;
+            }
+            else{
+                address = `http://localhost:${PORT}/${shortURL}`;
+            }
+
+            res.status(200).json({"id" : shortURL, "shortUrl" : address});
         }
     }
     catch(err){

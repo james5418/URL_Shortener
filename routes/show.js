@@ -2,13 +2,6 @@ const router = require("express").Router();
 const client = require("../utils/redis_client");
 const PORT = process.env.PORT || 8000;
 
-if(process.env.NODE_ENV === 'production') {
-	HOST = 'https://short--url.herokuapp.com'
-}
-else{
-	HOST = 'http://localhost'
-}
-
 router.get('/', async(req, res) => {
     try{
         const keys = await client.sendCommand(["keys","*"]);
@@ -16,7 +9,16 @@ router.get('/', async(req, res) => {
 
         for(let i=0;i<keys.length;i++){
             const long_url = await client.hGetAll(keys[i]);
-            query.push({"short_url":`${HOST}:${PORT}/${keys[i]}`, "original_url":`${long_url.url}`});
+            let address = "";
+
+            if(process.env.NODE_ENV === 'production') {
+                address = `https://short--url.herokuapp.com/${keys[i]}`;
+            }
+            else{
+                address = `http://localhost:${PORT}/${keys[i]}`;
+            }
+
+            query.push({"short_url":address, "original_url":`${long_url.url}`});
         }
 
         res.status(200).json(query);
