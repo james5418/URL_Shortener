@@ -45,12 +45,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Deploy to Heroku
-      # uses: akhileshns/heroku-deploy@v3.12.12
-      uses: ElayGelbart/Heroku-Auto-Deployment@v1.0.6
+      uses: akhileshns/heroku-deploy@v3.12.12
       with:
-        # heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
         # heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
-        # heroku_email: ${{secrets.EMAIL}}
-        # branch: main
-        herokuApiKey: ${{ secrets.HEROKU_API_KEY}}
-        herokuAppName: ${{ secrets.HEROKU_APP_NAME}}
+        heroku_app_name: short--url
+        heroku_email: ${{secrets.EMAIL}}
+        branch: main
+
