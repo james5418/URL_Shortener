@@ -3,7 +3,6 @@ const client = require("../utils/redis_client");
 const check_date = require("../utils/validation");
 const PORT = process.env.PORT || 8000;
 
-
 router.get('/:id', async(req, res) => {
     try{
         const url_id = req.params.id;
