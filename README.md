@@ -55,15 +55,21 @@ curl -L -X GET https://short--url.herokuapp.com/show
 
 
 ## Development Setup
-Get project dependencies
+
+### Redis setup
+#### Connect to localhost on port 6379
+- Set environment variable `REDIS_URL=redis://localhost:6379` in **.env** file
+- Install Redis on Ubuntu/Debian
+  - `sudo apt-get update`
+  - `sudo apt-get install redis-server`
+- Run `sudo service redis-server start`
+#### Connect to a different host or port
+- Set environment variable in the format `REDIS_URL=redis[s]://[[username][:password]@][host][:port][/db-number]` 
+
+### Server startup
 ```
 npm install
 ```
-Redis startup
-```
-sudo service redis-server start
-```
-Run server
 ```
 npm start
 ```
