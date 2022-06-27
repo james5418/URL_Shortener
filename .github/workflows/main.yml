@@ -43,6 +43,7 @@ jobs:
         os: [ubuntu-latest]
 
     steps:
+    - uses: actions/checkout@v3
     - name: Deploy to Heroku
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
