@@ -64,7 +64,7 @@ curl -L -X GET https://short--url.herokuapp.com/show
   - `sudo apt-get install redis-server`
 - Run `sudo service redis-server start`
 #### Connect to a different host or port
-- Set environment variable in the format `REDIS_URL=redis[s]://[[username][:password]@][host][:port][/db-number]` 
+- Set environment variable `REDIS_URL=redis[s]://[[username][:password]@][host][:port][/db-number]` 
 
 ### Server startup
 ```
