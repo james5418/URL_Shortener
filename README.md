@@ -14,9 +14,10 @@
 ![](https://img.shields.io/badge/Express.js-✓-blue.svg)
 ![](https://img.shields.io/badge/Redis-✓-red.svg)
 ![](https://img.shields.io/badge/Mocha-✓-brown.svg)
-![](https://img.shields.io/badge/Chai-✓-orange.svg) -->
+![](https://img.shields.io/badge/Chai-✓-orange.svg)
+ -->
+### URL Shortener RESTful API
 
-### Yet Another URL Shortening Service
 > https://short--url.herokuapp.com
 
 ## Features
@@ -94,7 +95,7 @@ The URL Shortener works in two APIs
 > Since clients may access the server simultaneously and the expired date for the same short URL can be different, it makes sense to store many pairs of different short URLs with the same original URL in the database.
 
 
-### Database &nbsp; ![Redis](https://img.shields.io/static/v1?message=Redis&logo=redis&labelColor=5c5c5c&color=%23DD0031&logoColor=white&label=%20&style=flate)
+### Database &nbsp;![Redis](https://img.shields.io/static/v1?message=Redis&logo=redis&labelColor=5c5c5c&color=%23DD0031&logoColor=white&label=%20&style=flate)
 
 - As an in-memory database, Redis is super fast and performant, which makes the application itself faster.
 - Redis key value-based database is suitable for this project, this is, saving URLs mapping.
@@ -104,9 +105,9 @@ The URL Shortener works in two APIs
 - Using a separate database like MongoDB in addition to using Redis would add more complexity and compromises latency.<br>
   Actually, apart from a caching database, Redis has since evolved into a primary database nowadays.
 
-### Testing &nbsp; ![Mocha](https://img.shields.io/static/v1?message=Mocha&logo=mocha&labelColor=5c5c5c&color=%238D6748&logoColor=white&label=%20&style=flate) ![Chai](https://img.shields.io/static/v1?message=Chai&logo=chai&labelColor=5c5c5c&color=A30701&logoColor=white&label=%20&style=flate)
+### Testing &nbsp;![Mocha](https://img.shields.io/static/v1?message=Mocha&logo=mocha&labelColor=5c5c5c&color=%238D6748&logoColor=white&label=%20&style=flate) ![Chai](https://img.shields.io/static/v1?message=Chai&logo=chai&labelColor=5c5c5c&color=A30701&logoColor=white&label=%20&style=flate)
 
-✔Examine `check_date()` function, POST API, and GET API
+✔ Examine `check_date()` function, POST API, and GET API
 ```
 npm test
 ```
