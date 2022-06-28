@@ -12,11 +12,6 @@ router.get('/:id', async(req, res) => {
             res.redirect(long_url.url);
         }
         else{
-            // await client.hSet(url_id, [
-            //     'url', null,
-            //     'expireAt', null,
-            // ]);
-
             res.status(404).send(`${url_id} not found`);
         }
     }
