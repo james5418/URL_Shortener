@@ -107,7 +107,11 @@ The URL Shortener works in two APIs
 
 ### Testing &nbsp;![Mocha](https://img.shields.io/static/v1?message=Mocha&logo=mocha&labelColor=5c5c5c&color=%238D6748&logoColor=white&label=%20&style=flate) ![Chai](https://img.shields.io/static/v1?message=Chai&logo=chai&labelColor=5c5c5c&color=A30701&logoColor=white&label=%20&style=flate)
 
-✔ Examine `check_date()` function, POST API, and GET API
+Examine `check_date()` function, POST API, and GET API
 ```
 npm test
+```
+Check test coverage
+```
+npm run test-cover
 ```
