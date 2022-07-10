@@ -18,7 +18,7 @@ router.get('/', async(req, res) => {
                 address = `http://localhost:${PORT}/${keys[i]}`;
             }
 
-            query.push({"short_url":address, "original_url":`${long_url.url}`});
+            query.push({"short_url":address, "original_url":`${long_url.url}`, "expired_date":`${long_url.expireAt}`});
         }
 
         res.status(200).json(query);

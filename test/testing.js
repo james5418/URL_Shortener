@@ -199,7 +199,8 @@ describe("Show urls mapping", () => {
                 body[0].should.be.an('object');
                 body[0].should.have.property('short_url');
                 body[0].should.have.property('original_url');
-                Object.keys(body[0]).length.should.be.eql(2);
+                body[0].should.have.property('expired_date');
+                Object.keys(body[0]).length.should.be.eql(3);
             }
             done();
         });
