@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./index.js",
     "dev": "nodemon ./index.js",
-    "test": "mocha --exit"
+    "test": "mocha --exit",
+    "test-cover": "nyc mocha --exit"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "chai-http": "^4.3.0",
     "mocha": "^9.2.2",
     "nodemon": "^2.0.15",
+    "nyc": "^15.1.0",
     "request": "^2.88.2"
   }
 }
